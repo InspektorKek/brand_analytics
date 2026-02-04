@@ -17,6 +17,8 @@
       window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments); }, plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
       plausible.init();
     </script>
+    <!-- GSAP for lightweight attention animation -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <style>
       :root {
         --ink: #0b1021;
@@ -86,37 +88,39 @@
         font-size: 22px;
       }
       .row { display: flex; gap: 14px; align-items: center; }
-      .pill {
-        display: inline-flex;
+      .cta {
+        display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 18px;
-        border-radius: 999px;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 20px;
+        border-radius: 22px;
         border: 1px solid rgba(11, 16, 33, 0.1);
-        background: white;
+        background: linear-gradient(135deg, #ffffff, #f7efe8);
         color: var(--ink);
         text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        font-weight: 700;
+        font-size: 18px;
+        box-shadow: 0 16px 28px rgba(15, 23, 42, 0.18);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
-      .pill:hover { transform: translateY(-2px); border-color: var(--plum); color: var(--plum); }
-      .notice {
-        margin: 18px 0 0;
-        border-radius: 16px;
-        border: 1px solid rgba(11, 16, 33, 0.08);
-        background: white;
-        padding: 12px 16px;
+      .cta:hover { transform: translateY(-2px); border-color: var(--plum); box-shadow: 0 22px 40px rgba(15, 23, 42, 0.2); }
+      .section-title {
+        margin: 24px 0 12px;
         font-size: 13px;
-        color: rgba(11, 16, 33, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(11, 16, 33, 0.6);
       }
-      .links { display: grid; gap: 12px; margin-top: 24px; }
+      .links { display: grid; gap: 12px; }
+      .links-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .link {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        padding: 14px 16px;
-        border-radius: 18px;
+        padding: 12px 14px;
+        border-radius: 16px;
         border: 1px solid rgba(11, 16, 33, 0.1);
         background: white;
         text-decoration: none;
@@ -125,17 +129,17 @@
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       }
       .link:hover { transform: translateY(-2px); border-color: var(--plum); box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12); }
-      .link-left { display: flex; align-items: center; gap: 12px; }
+      .link-left { display: flex; align-items: center; gap: 10px; }
       .icon {
-        height: 40px;
-        width: 40px;
+        height: 36px;
+        width: 36px;
         border-radius: 999px;
         background: rgba(11, 16, 33, 0.06);
         display: grid;
         place-items: center;
       }
-      .icon img { height: 20px; width: 20px; }
-      .contact { margin-top: 24px; display: grid; gap: 12px; }
+      .icon img { height: 18px; width: 18px; }
+      .contact { margin-top: 22px; display: grid; gap: 12px; }
       .contact a {
         display: block;
         padding: 14px 16px;
@@ -152,9 +156,8 @@
       .footer { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; color: rgba(11, 16, 33, 0.6); }
       .footer a { color: inherit; text-decoration: none; }
       .footer a:hover { color: var(--plum); }
-      @media (max-width: 520px) {
-        .card { padding: 22px; }
-        .title { font-size: 24px; }
+      @media (max-width: 640px) {
+        .links-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -171,13 +174,14 @@
         </div>
 
         <div style="margin-top: 20px;">
-          <a class="pill" href="https://collshp.com/noviantyilma" target="_blank" rel="noreferrer">
+          <a class="cta" id="daily-cta" href="https://collshp.com/noviantyilma" target="_blank" rel="noreferrer">
             Things I actually use daily
             <span aria-hidden="true">→</span>
           </a>
         </div>
 
-        <div class="links">
+        <div class="section-title">Find me here</div>
+        <div class="links-grid">
           <a class="link" href="https://www.instagram.com/noviantyilma/" target="_blank" rel="noreferrer">
             <span class="link-left">
               <span class="icon"><img src="https://cdn.simpleicons.org/instagram/0b1021" alt="Instagram" loading="lazy" /></span>
@@ -209,7 +213,7 @@
           <a class="link" href="https://open.spotify.com/user/noviantyilma?si=f4b521baf98f47ef" target="_blank" rel="noreferrer">
             <span class="link-left">
               <span class="icon"><img src="https://cdn.simpleicons.org/spotify/0b1021" alt="Spotify" loading="lazy" /></span>
-              My Spotify Playlist
+              Spotify Playlist
             </span>
             <span aria-hidden="true">→</span>
           </a>
@@ -231,5 +235,17 @@
         </div>
       </section>
     </main>
+
+    <script>
+      window.addEventListener("load", function () {
+        if (window.gsap) {
+          gsap.fromTo(
+            "#daily-cta",
+            { scale: 1 },
+            { scale: 1.03, repeat: -1, yoyo: true, duration: 1.6, ease: "power1.inOut" }
+          );
+        }
+      });
+    </script>
   </body>
 </html>
