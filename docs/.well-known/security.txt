@@ -1,0 +1,4 @@
+Contact: mailto:noviantyilma@gmail.com
+Preferred-Languages: id, en
+Policy: https://ilmanovianty.space/privacy.html
+Canonical: https://ilmanovianty.space/.well-known/security.txt
