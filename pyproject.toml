@@ -1,0 +1,25 @@
+[project]
+name = "brand-analytics"
+version = "0.1.0"
+description = "Fashion trend tracker chatbot (Indonesia)"
+requires-python = ">=3.11"
+readme = "IMPLEMENTATION_GUIDE.md"
+license = { text = "Proprietary" }
+
+dependencies = [
+  "requests==2.32.3",
+  "python-dotenv==1.0.1",
+  "langgraph==0.2.27",
+  "fastapi==0.115.6",
+  "uvicorn==0.30.6",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.4",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q"
+testpaths = ["tests"]
