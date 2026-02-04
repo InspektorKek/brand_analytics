@@ -6,63 +6,99 @@
     <title>Ilma Novianty</title>
     <meta name="description" content="Official links for Ilma Novianty" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Fraunces", "serif"],
+              body: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              ink: "#0b1021",
+              sand: "#f6f2ea",
+              plum: "#3b2b6e",
+              coral: "#ff7f6a",
+              moss: "#2f7d65",
+            },
+            boxShadow: {
+              card: "0 20px 50px rgba(15, 23, 42, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-oYGjAs9oAWdbEHPMAWayG.js"></script>
     <script>
       window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments); }, plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
       plausible.init();
     </script>
-    <style>
-      :root {
-        --accent: #0f766e;
-        --ink: #0f172a;
-        --bg: #f8fafc;
-      }
-    </style>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900">
-    <main class="mx-auto max-w-xl px-6 py-10">
-      <section class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-        <div class="flex items-center gap-4">
-          <div class="h-16 w-16 rounded-2xl bg-teal-700 text-white grid place-items-center text-2xl font-bold">
-            IN
-          </div>
-          <div>
-            <h1 class="text-2xl font-semibold">Ilma Novianty</h1>
-            <p class="text-slate-600">Fashion • Lifestyle • Daily Inspiration</p>
-          </div>
-        </div>
+  <body class="min-h-screen bg-sand font-body text-ink">
+    <div class="relative overflow-hidden">
+      <div class="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-coral/40 blur-3xl"></div>
+      <div class="absolute right-0 top-20 h-72 w-72 rounded-full bg-moss/30 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-plum/20 blur-3xl"></div>
 
-        <div class="mt-8 space-y-3">
-          <a
-            href="https://www.instagram.com/noviantyilma?igsh=Zm92bGVlbGh4MG5s"
-            class="block rounded-2xl border border-slate-200 px-4 py-3 font-medium hover:border-teal-700 hover:text-teal-700"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://pin.it/ZHOBnhC98"
-            class="block rounded-2xl border border-slate-200 px-4 py-3 font-medium hover:border-teal-700 hover:text-teal-700"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Pinterest
-          </a>
-          <a
-            href="mailto:noviantyilma@gmail.com"
-            class="block rounded-2xl border border-slate-200 px-4 py-3 font-medium hover:border-teal-700 hover:text-teal-700"
-          >
-            Email
-          </a>
-        </div>
+      <main class="relative mx-auto max-w-2xl px-6 py-12">
+        <section class="rounded-[32px] bg-white/90 p-8 shadow-card ring-1 ring-ink/5 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="h-16 w-16 rounded-2xl bg-ink text-white grid place-items-center text-2xl font-semibold">
+              IN
+            </div>
+            <div>
+              <h1 class="font-display text-3xl">Ilma Novianty</h1>
+              <p class="text-ink/70">Fashion model • Lifestyle • Daily inspiration</p>
+            </div>
+          </div>
 
-        <div class="mt-8 flex items-center justify-between text-sm text-slate-500">
-          <span>© 2026 Ilma Novianty</span>
-          <a class="hover:text-teal-700" href="privacy.html">Privacy Policy</a>
-        </div>
-      </section>
-    </main>
+          <div class="mt-8 grid gap-3">
+            <a class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white px-4 py-4 font-medium transition hover:-translate-y-0.5 hover:border-plum hover:shadow-lg" href="https://www.instagram.com/noviantyilma/" target="_blank" rel="noreferrer">
+              Instagram
+              <span class="text-ink/40 group-hover:text-plum">→</span>
+            </a>
+            <a class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white px-4 py-4 font-medium transition hover:-translate-y-0.5 hover:border-plum hover:shadow-lg" href="https://www.tiktok.com/@noviantyilma" target="_blank" rel="noreferrer">
+              TikTok
+              <span class="text-ink/40 group-hover:text-plum">→</span>
+            </a>
+            <a class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white px-4 py-4 font-medium transition hover:-translate-y-0.5 hover:border-plum hover:shadow-lg" href="https://id.pinterest.com/noviantyilma" target="_blank" rel="noreferrer">
+              Pinterest
+              <span class="text-ink/40 group-hover:text-plum">→</span>
+            </a>
+            <a class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white px-4 py-4 font-medium transition hover:-translate-y-0.5 hover:border-plum hover:shadow-lg" href="https://www.youtube.com/@Noviantyilma" target="_blank" rel="noreferrer">
+              YouTube
+              <span class="text-ink/40 group-hover:text-plum">→</span>
+            </a>
+            <a class="group flex items-center justify-between rounded-2xl border border-ink/10 bg-white px-4 py-4 font-medium transition hover:-translate-y-0.5 hover:border-plum hover:shadow-lg" href="https://open.spotify.com/user/noviantyilma?si=f4b521baf98f47ef" target="_blank" rel="noreferrer">
+              My Spotify Playlist
+              <span class="text-ink/40 group-hover:text-plum">→</span>
+            </a>
+          </div>
+
+          <div class="mt-8 grid gap-3">
+            <div class="rounded-2xl border border-ink/10 bg-ink px-4 py-4 text-white">
+              <div class="text-sm uppercase tracking-wide text-white/70">Endorse & Collab</div>
+              <div class="text-lg font-semibold">noviantyilma@gmail.com</div>
+            </div>
+            <div class="rounded-2xl border border-ink/10 bg-white px-4 py-4">
+              <div class="text-sm uppercase tracking-wide text-ink/60">Fashion Model - Contact</div>
+              <div class="text-lg font-semibold">+62 896-5441-4554</div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-ink/60">
+            <a class="rounded-full border border-ink/10 bg-white px-4 py-2 hover:border-plum hover:text-plum" href="daily.html">
+              Things I actually use daily
+            </a>
+            <a class="hover:text-plum" href="privacy.html">Privacy Policy</a>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
